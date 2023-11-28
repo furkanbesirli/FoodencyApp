@@ -19,8 +19,23 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingClass" />
 
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/addImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/plus"
+
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+        app:layout_constraintEnd_toEndOf="@+id/profile_image"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        tools:ignore="MissingClass" />
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -39,7 +54,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField2"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -48,7 +63,7 @@
         android:hint="E-Mail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textField">
+        app:layout_constraintTop_toBottomOf="@id/name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -58,7 +73,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textFieldPassword"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -67,7 +82,7 @@
         android:hint="Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textField2">
+        app:layout_constraintTop_toBottomOf="@id/email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -78,17 +93,17 @@
 
 
     <Button
-        android:id="@+id/elevatedButton"
+        android:id="@+id/sign_up_btn"
         style="@style/Widget.Material3.Button.Icon"
-        android:layout_width="110dp"
-        android:layout_height="45dp"
+        android:layout_width="154dp"
+        android:layout_height="47dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="#2196F3"
         android:text="Kayıt Ol"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textFieldPassword"
+        app:layout_constraintTop_toBottomOf="@+id/password"
         app:rippleColor="#093CFB" />
 
     <TextView
@@ -102,7 +117,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/elevatedButton" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_btn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
