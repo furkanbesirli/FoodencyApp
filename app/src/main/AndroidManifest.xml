@@ -13,6 +13,18 @@
         android:theme="@style/Theme.FoodencyApp"
         tools:targetApi="31">
         <activity
+            android:name=".fragments.HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.FoodencyApp" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +19,19 @@ class MainActivity : AppCompatActivity() {
         }, 3000)
 
 
+
+
+       // Handler(Looper.getMainLooper()).postDelayed({
+        //    if(FirebaseAuth.getInstance().currentUser==null){
+      //          startActivity(Intent(this@MainActivity, SignUpActivity::class.java))
+    //        }else{
+  //              startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+//
+          //  }
+         //   finish()
+        //}, 3000)
+        //
+        //
 
     }
 }
