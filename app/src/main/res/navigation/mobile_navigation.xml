@@ -9,7 +9,7 @@
         android:name="com.furkanbesirli.foodencyapp.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
-    <fragment
+    <dialog
         android:id="@+id/add"
         android:name="com.furkanbesirli.foodencyapp.fragments.AddFragment"
         android:label="fragment_add"
