@@ -1,5 +1,7 @@
 package com.furkanbesirli.foodencyapp.utils
 
+import android.app.ProgressDialog
+import android.content.Context
 import com.google.firebase.storage.FirebaseStorage
 import android.net.Uri
 import java.util.UUID
@@ -14,4 +16,25 @@ FirebaseStorage.getInstance().getReference(folderName).child(UUID.randomUUID().t
 
         }
     }
+}
+
+fun uploadVideo(uri: Uri, folderName:String,progressDialog: ProgressDialog, callback:(String?)-> Unit){
+    var imageUrl:String?=null
+    progressDialog.setTitle("Uploading. . .")
+    progressDialog.show()
+
+    FirebaseStorage.getInstance().getReference(folderName).child(UUID.randomUUID().toString()).putFile(uri)
+        .addOnSuccessListener {
+            it.storage.downloadUrl.addOnSuccessListener {
+                imageUrl=it.toString()
+                progressDialog.dismiss()
+                callback(imageUrl)
+
+            }
+        }.addOnProgressListener {
+
+            val uploadedValue: Long = it.bytesTransferred/it.totalByteCount
+            progressDialog.setMessage("Uploaded $uploadedValue %")
+
+        }
 }

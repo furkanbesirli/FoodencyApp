@@ -20,12 +20,12 @@
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Yeni Video Ekle" />
+        app:title="Yeni Video Paylaş" />
 
 
     <Button
 
-        android:id="@+id/select_image"
+        android:id="@+id/select_reel"
         style="@style/Widget.Material3.Button.OutlinedButton"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -43,11 +43,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:hint="Bilgi Giriniz"
+        android:hint="Açıklama Giriniz"
         app:boxStrokeColor="@android:color/holo_purple"
-        app:layout_constraintEnd_toEndOf="@+id/select_image"
-        app:layout_constraintStart_toStartOf="@+id/select_image"
-        app:layout_constraintTop_toBottomOf="@+id/select_image">
+        app:layout_constraintEnd_toEndOf="@+id/select_reel"
+        app:layout_constraintStart_toStartOf="@+id/select_reel"
+        app:layout_constraintTop_toBottomOf="@+id/select_reel">
 
         <com.google.android.material.textfield.TextInputEditText
 
@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:paddingRight="48dp"
-            android:text="DOLDUR BİSİLER"
+            android:text="Bilgilendirme"
 
             app:layout_constraintStart_toStartOf="@+id/reels"
             app:layout_constraintTop_toBottomOf="@+id/reels"
@@ -123,22 +123,22 @@
             app:layout_constraintTop_toBottomOf="@id/textView4">
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/cancelButton"
                 style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Button"
+                android:text="İptal"
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/reels_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Button"
+                android:layout_weight="1"
                 android:backgroundTint="@android:color/holo_blue_dark"
-                android:layout_weight="1" />
+                android:text="Paylaş" />
 
         </LinearLayout>
 
