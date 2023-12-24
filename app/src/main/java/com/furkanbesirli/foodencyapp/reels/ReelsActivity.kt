@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import com.furkanbesirli.foodencyapp.HomeActivity
 import com.furkanbesirli.foodencyapp.Models.Reels
+import com.furkanbesirli.foodencyapp.databinding.ActivityLoginBinding
 import com.furkanbesirli.foodencyapp.databinding.ActivityReelsBinding
 import com.furkanbesirli.foodencyapp.utils.REEL
 import com.furkanbesirli.foodencyapp.utils.REEL_FOLDER
@@ -17,30 +18,44 @@ import com.google.firebase.ktx.Firebase
 
 class ReelsActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityReelsBinding
+
+    val binding by lazy {
+        ActivityReelsBinding.inflate(layoutInflater)
+    }
 
     private lateinit var videoUrl: String
 
 
-    lateinit var progressDialog:ProgressDialog
+    private lateinit var progressDialog:ProgressDialog
 
     private val launcher= registerForActivityResult(ActivityResultContracts.GetContent()) {uri -> uri?.let {
 
-        uploadVideo(uri,REEL_FOLDER,progressDialog){ url ->
-            if(url!=null){
+        uploadVideo(uri, REEL, progressDialog
 
+        ){ url ->
+            if(url!=null){
                 videoUrl=url
             }
         }
     }
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.materialToolBar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+
         progressDialog= ProgressDialog(this)
+
+
+        binding.materialToolBar.setOnClickListener {
+            finish()
+        }
+
 
         binding.selectReel.setOnClickListener {
 

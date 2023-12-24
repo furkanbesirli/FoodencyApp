@@ -10,18 +10,18 @@
     <com.google.android.material.appbar.MaterialToolbar
 
         android:id="@+id/materialToolBar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="45dp"
-        android:background="#FFFFFF"
-        android:minHeight="?attr/actionBarTheme"
+        android:background="#5460A5"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Yeni Video Paylaş" />
-
+        app:title="Yeni Video Paylaş"
+        app:titleCentered="true"
+        app:titleTextColor="#FBFBFB" />
 
     <Button
 
