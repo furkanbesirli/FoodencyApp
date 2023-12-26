@@ -7,13 +7,16 @@ import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import com.furkanbesirli.foodencyapp.HomeActivity
 import com.furkanbesirli.foodencyapp.Models.Reels
+import com.furkanbesirli.foodencyapp.Models.User
 import com.furkanbesirli.foodencyapp.databinding.ActivityLoginBinding
 import com.furkanbesirli.foodencyapp.databinding.ActivityReelsBinding
 import com.furkanbesirli.foodencyapp.utils.REEL
 import com.furkanbesirli.foodencyapp.utils.REEL_FOLDER
+import com.furkanbesirli.foodencyapp.utils.USER_NODE
 import com.furkanbesirli.foodencyapp.utils.uploadVideo
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.toObject
 import com.google.firebase.ktx.Firebase
 
 class ReelsActivity : AppCompatActivity() {
@@ -68,17 +71,23 @@ class ReelsActivity : AppCompatActivity() {
         }
 
         binding.reelsButton.setOnClickListener {
+            Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid).get().addOnSuccessListener {
 
-            val reel: Reels = Reels(videoUrl!!, binding.caption.editText?.text.toString())
+                var user:User = it.toObject<User>()!!
 
-            Firebase.firestore.collection(REEL).document().set(reel).addOnSuccessListener {
-                Firebase.firestore.collection(Firebase.auth.currentUser!!.uid + REEL).document().set(reel).addOnSuccessListener {
-                    startActivity(Intent(this@ReelsActivity,HomeActivity::class.java))
-                    finish()
+                val reel: Reels = Reels(videoUrl!!, binding.caption.editText?.text.toString(),user.image!!)
+
+                Firebase.firestore.collection(REEL).document().set(reel).addOnSuccessListener {
+                    Firebase.firestore.collection(Firebase.auth.currentUser!!.uid + REEL).document().set(reel).addOnSuccessListener {
+                        startActivity(Intent(this@ReelsActivity,HomeActivity::class.java))
+                        finish()
+
+                    }
 
                 }
 
             }
+
 
         }
 
