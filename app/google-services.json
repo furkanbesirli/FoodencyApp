@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "167691399361",
+    "project_id": "foodencyapp",
+    "storage_bucket": "foodencyapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167691399361:android:f562ef6096439cfd54e440",
+        "android_client_info": {
+          "package_name": "com.furkanbesirli.foodencyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDObl7jcl5iOih21cHF6M22lXccg5Zspp0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
