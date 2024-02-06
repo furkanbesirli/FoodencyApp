@@ -1,5 +1,6 @@
 package com.furkanbesirli.foodencyapp.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.furkanbesirli.foodencyapp.Models.User
-import com.furkanbesirli.foodencyapp.R
 import com.furkanbesirli.foodencyapp.adapters.SearchAdapter
 import com.furkanbesirli.foodencyapp.databinding.FragmentSearchBinding
 import com.furkanbesirli.foodencyapp.utils.USER_NODE
@@ -27,6 +27,7 @@ class SearchFragment : Fragment() {
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -80,19 +81,13 @@ class SearchFragment : Fragment() {
 
                     }else{
                         var user:User= i.toObject<User>()!!
-
                         tempList.add(user)
-
                     }
-
                 }
                     userList.addAll(tempList)
                     adapter.notifyDataSetChanged()
-
                 }
-
             }
-
         }
         return binding.root
     }

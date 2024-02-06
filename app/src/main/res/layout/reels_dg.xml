@@ -36,7 +36,7 @@
         android:layout_marginStart="10dp"
         android:maxLines="2"
         android:text="this is my temp data for video"
-        android:textColor="@color/white"
+        android:textColor="@android:color/holo_red_dark"
 
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/profile_image"
@@ -53,15 +53,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="time"
-        app:layout_constraintStart_toStartOf="@+id/caption"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="593dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

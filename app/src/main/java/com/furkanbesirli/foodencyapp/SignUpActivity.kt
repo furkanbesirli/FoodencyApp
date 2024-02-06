@@ -27,7 +27,6 @@ class SignUpActivity : AppCompatActivity() {
 
     lateinit var user : User
 
-    //burası aslında private val launcher
     val launcher = registerForActivityResult(ActivityResultContracts.GetContent()){
 
             uri ->
@@ -91,15 +90,8 @@ class SignUpActivity : AppCompatActivity() {
                             startActivity(Intent(this@SignUpActivity, HomeActivity::class.java))
                             finish()
                         }
-
-
                 }
-
             } else {
-
-
-
-
             if (binding.name.editText?.text.toString().equals("") or
                 binding.email.editText?.text.toString().equals("") or
                 binding.password.editText?.text.toString().equals("")

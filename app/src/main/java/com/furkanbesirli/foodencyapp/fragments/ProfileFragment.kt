@@ -57,7 +57,6 @@ class ProfileFragment : Fragment() {
     companion object {
 
     }
-
     override fun onStart() {
         super.onStart()
         Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid).get().addOnSuccessListener {
